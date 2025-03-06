@@ -1,0 +1,36 @@
+﻿@page
+@model InvoiceModel
+@{
+    ViewData["Title"] = "Invoice";
+}
+<h2>Invoice</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Cart)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>$@item.Price</td>
+                <td>@item.Quantity</td>
+                <td>$@item.Total</td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3">Total</td>
+            <td>$@Model.Total</td>
+        </tr>
+        <tr>
+            <td colspan="4">@Model.TotalInWords</td>
+        </tr>
+    </tfoot>
+</table>

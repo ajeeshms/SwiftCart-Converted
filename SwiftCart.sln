@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwiftCart", "SwiftCart\SwiftCart.csproj", "{1565A267-882A-48E6-8560-6A66F24A7786}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwiftCart.Logging", "SwiftCart.Logging\SwiftCart.Logging.csproj", "{E63F470A-736F-48EA-B569-E4CA0553E7D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwiftCart.Integrations", "SwiftCart.Integrations\SwiftCart.Integrations.csproj", "{C96AE291-780E-4689-B454-0FE3857E28F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwiftCart.Models", "SwiftCart.Models\SwiftCart.Models.csproj", "{99DE8E07-7F8F-4B2E-8ABF-5322D8F8788E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwiftCart.Data", "SwiftCart.Data\SwiftCart.Data.csproj", "{AA82F7BF-FC7E-44A4-ADDF-7B72C56AE056}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwiftCart.Api", "SwiftCart.Api\SwiftCart.Api.csproj", "{D22538AD-67C6-4309-8B90-0B50141D0113}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1565A267-882A-48E6-8560-6A66F24A7786}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1565A267-882A-48E6-8560-6A66F24A7786}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1565A267-882A-48E6-8560-6A66F24A7786}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1565A267-882A-48E6-8560-6A66F24A7786}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E63F470A-736F-48EA-B569-E4CA0553E7D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E63F470A-736F-48EA-B569-E4CA0553E7D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E63F470A-736F-48EA-B569-E4CA0553E7D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E63F470A-736F-48EA-B569-E4CA0553E7D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C96AE291-780E-4689-B454-0FE3857E28F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C96AE291-780E-4689-B454-0FE3857E28F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C96AE291-780E-4689-B454-0FE3857E28F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C96AE291-780E-4689-B454-0FE3857E28F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99DE8E07-7F8F-4B2E-8ABF-5322D8F8788E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99DE8E07-7F8F-4B2E-8ABF-5322D8F8788E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99DE8E07-7F8F-4B2E-8ABF-5322D8F8788E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99DE8E07-7F8F-4B2E-8ABF-5322D8F8788E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA82F7BF-FC7E-44A4-ADDF-7B72C56AE056}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA82F7BF-FC7E-44A4-ADDF-7B72C56AE056}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA82F7BF-FC7E-44A4-ADDF-7B72C56AE056}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA82F7BF-FC7E-44A4-ADDF-7B72C56AE056}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D22538AD-67C6-4309-8B90-0B50141D0113}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D22538AD-67C6-4309-8B90-0B50141D0113}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D22538AD-67C6-4309-8B90-0B50141D0113}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D22538AD-67C6-4309-8B90-0B50141D0113}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
