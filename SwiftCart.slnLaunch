@@ -1,0 +1,27 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "src\\Services\\Product\\SwiftCart.Product.Api\\SwiftCart.Product.Api.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "src\\Services\\User\\SwiftCart.User.Api\\SwiftCart.User.Api.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "src\\ApiGateways\\SwiftCart.ApiGateway\\SwiftCart.ApiGateway.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "src\\Frontend\\SwiftCart.Frontend\\swiftcart.frontend.esproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "src\\Services\\Notification\\SwiftCart.Notification.Api\\SwiftCart.Notification.Api.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

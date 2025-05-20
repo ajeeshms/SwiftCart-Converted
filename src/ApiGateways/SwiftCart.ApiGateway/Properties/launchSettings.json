@@ -1,0 +1,48 @@
+﻿{
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "iisSettings": { // If you have IIS Express profiles, you can ignore for Kestrel
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:12345", // Example IIS port, not relevant if using Kestrel profile
+      "sslPort": 44300 // Example IIS SSL port
+    }
+  },
+  "profiles": {
+    "http": { // <--- FOCUS ON THIS PROFILE (or your active Kestrel profile)
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true, // Set to false if you don't want a browser to open
+      "applicationUrl": "http://localhost:6001", // <--- SET YOUR DESIRED GATEWAY URL HERE
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development" // Or "Production" if your appsettings.Production.json has specific Kestrel settings
+      }
+    },
+    "https": { // Common default, might also exist
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "applicationUrl": "https://localhost:6002;http://localhost:6001", // Can specify both
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "IIS Express": { // If you are NOT using IIS Express, this isn't the active one
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+    // Add a profile for your project name if it doesn't exist and you use that
+    // "ApiGateway": {
+    //   "commandName": "Project",
+    //   "dotnetRunMessages": true,
+    //   "launchBrowser": false,
+    //   "applicationUrl": "http://localhost:6000",
+    //   "environmentVariables": {
+    //     "ASPNETCORE_ENVIRONMENT": "Development"
+    //   }
+    // }
+  }
+}

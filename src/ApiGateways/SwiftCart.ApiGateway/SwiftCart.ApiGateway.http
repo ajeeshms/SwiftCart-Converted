@@ -1,0 +1,6 @@
+@SwiftCart.ApiGateway_HostAddress = http://localhost:5093
+
+GET {{SwiftCart.ApiGateway_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
