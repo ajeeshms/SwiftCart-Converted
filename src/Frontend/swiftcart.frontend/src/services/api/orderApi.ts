@@ -1,11 +1,14 @@
+// filename: src\services\api\orderApi.ts
 import { api } from '@/lib/axios';
 import { OrderDto } from '@/types';
 
-const baseURL = import.meta.env.VITE_ORDER_API_URL;
+// const baseURL = import.meta.env.VITE_ORDER_API_URL; // Remove this line
 
 export const orderApi = {
-  getById: (id: string) => api.get<OrderDto>(`${baseURL}/api/orders/${id}`),
-  getByUserId: (userId: string) => api.get<OrderDto[]>(`${baseURL}/api/orders/user/${userId}`),
-  create: (data: any) => api.post<OrderDto>(`${baseURL}/api/orders`, data),
-  updateStatus: (id: string, status: string) => api.patch<OrderDto>(`${baseURL}/api/orders/${id}/status`, { status }),
+    // Update paths to include the service prefix
+    getById: (id: string) => api.get<OrderDto>(`/orderservice/orders/${id}`),
+    getByUserId: (userId: string) => api.get<OrderDto[]>(`/orderservice/orders/user/${userId}`),
+    create: (data: OrderDto) => api.post<OrderDto>(`/orderservice/orders`, data), // Adjusted data type to OrderDto
+    updateStatus: (id: string, status: string) => api.patch<OrderDto>(`/orderservice/orders/${id}/status`, { status }),
+    // Assuming OrderDto can be used for creation, might need a dedicated CreateOrderDto later
 };
