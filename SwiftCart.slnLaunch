@@ -19,7 +19,11 @@
         "Action": "Start"
       },
       {
-        "Path": "src\\Services\\Notification\\SwiftCart.Notification.Api\\SwiftCart.Notification.Api.csproj",
+        "Path": "src\\Services\\Cart\\SwiftCart.Cart.Api\\SwiftCart.Cart.Api.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "src\\Services\\Order\\SwiftCart.Order.Api\\SwiftCart.Order.Api.csproj",
         "Action": "Start"
       }
     ]

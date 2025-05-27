@@ -1,6 +1,7 @@
 // Program.cs for ApiGateway
 
 using Microsoft.AspNetCore.HttpOverrides;
+using SwiftCart.BuildingBlocks.Common.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -39,6 +40,8 @@ app.UseCors(GatewayCorsPolicy);
 // app.UseRouting(); // YARP handles routing, but if you have other local endpoints
 // app.UseAuthentication();
 // app.UseAuthorization();
+
+app.UseServerTimeHeader();
 
 // 5. Enable YARP
 app.MapReverseProxy();
