@@ -1,6 +1,8 @@
 using SwiftCart.BuildingBlocks;
 using SwiftCart.Cart.Application;
+using SwiftCart.Cart.Application.Interfaces;
 using SwiftCart.Cart.Infrastructure;
+using SwiftCart.Cart.Infrastructure.Clients;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +13,17 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
+
+// --- Add Product API Client configuration ---
+// Configure the base address for the HttpClient from settings
+var productApiUrl = builder.Configuration["ProductService:Url"];
+if (string.IsNullOrEmpty(productApiUrl)) {
+    throw new InvalidOperationException("ProductService:Url configuration is missing.");
+}
+
+builder.Services.AddHttpClient<IProductApiClient, ProductApiClient>(client => {
+    client.BaseAddress = new Uri(productApiUrl);
+});
 
 // Configure Kestrel to use port 5006
 builder.WebHost.ConfigureKestrel(options =>

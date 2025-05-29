@@ -1,11 +1,16 @@
 using System;
 
-namespace SwiftCart.Cart.Application.Commands;
+namespace SwiftCart.Cart.Application.Commands {
+    /// <summary>
+    /// Command to add an item to a user's cart.
+    /// Frontend sends only the minimum required information.
+    /// </summary>
+    public class AddItemCommand {
+        public Guid UserId { get; set; }
+        public Guid ProductId { get; set; }
+        public int Quantity { get; set; }
 
-public record AddItemCommand(
-    Guid CartId,
-    Guid ProductId,
-    string ProductName,
-    decimal UnitPrice,
-    int Quantity
-);
+        // ProductName and UnitPrice are REMOVED.
+        // The Cart Service will fetch these from the Product Service.
+    }
+}

@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SwiftCart.Product.Application.DTOs;
 using SwiftCart.Product.Application.Interfaces;
@@ -15,6 +16,7 @@ public class ProductsController : ControllerBase
         _productService = productService;
     }
 
+    [AllowAnonymous]
     [HttpGet]
     public async Task<ActionResult<IEnumerable<ProductDto>>> GetAll(int page, int size)
     {
@@ -22,6 +24,7 @@ public class ProductsController : ControllerBase
         return Ok(products);
     }
 
+    [AllowAnonymous]
     [HttpGet("{id}")]
     public async Task<ActionResult<ProductDto>> GetById(Guid id)
     {
@@ -29,6 +32,7 @@ public class ProductsController : ControllerBase
         return Ok(product);
     }
 
+    [AllowAnonymous]
     [HttpGet("category/{category}")]
     public async Task<ActionResult<IEnumerable<ProductDto>>> GetByCategory(string category)
     {

@@ -24,8 +24,8 @@ export interface CartItemDto {
     id: string;
     cartId: string;
     productId: string;
-    productName: string;
-    unitPrice: number;
+    productName: string; // This is still needed in the DTO returned BY the Cart service
+    unitPrice: number;   // This is still needed in the DTO returned BY the Cart service
     quantity: number;
     totalPrice: number;
 }
@@ -94,4 +94,13 @@ export interface UpdateUserDto {
     lastName: string;
     phoneNumber: string;
     // Backend DTO does not include email or address for updates via this endpoint
+}
+
+// Update payload type for adding item to cart - frontend only sends identifiers and quantity
+export interface AddItemPayload {
+    userId: string;
+    productId: string;
+    quantity: number;
+    // productName and unitPrice are REMOVED from the payload sent BY the frontend
+    // The backend Cart service will fetch these details from the Product service.
 }
