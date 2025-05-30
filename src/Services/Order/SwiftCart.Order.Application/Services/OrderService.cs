@@ -35,6 +35,10 @@ public class OrderService : IOrderService
     {
         var order = _mapper.Map<Domain.Entities.Order>(orderDto);
         order.CreatedAt = DateTime.UtcNow;
+        var orderId = Guid.NewGuid();
+        order.OrderNumber = $"ORD-{orderId:N}";
+        order.Id = orderId;
+        order.Items.ForEach(item => { item.OrderId = orderId; item.Id = Guid.NewGuid(); });
         
         var createdOrder = await _orderRepository.CreateAsync(order);
         return _mapper.Map<OrderDto>(createdOrder);

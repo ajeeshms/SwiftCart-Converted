@@ -31,22 +31,23 @@ export interface CartItemDto {
 }
 
 export interface OrderDto {
-    id: string;
-    userId: string;
+    id?: string;
+    userId?: string;
     orderNumber: string;
-    status: string;
+    // Changed Status, PaymentStatus, PaymentMethod to number/int based on previous errors and payload
+    status: number; // Use number to match the integer payload you sent (0 for Pending)
     totalAmount: number;
     items: OrderItemDto[];
     shippingAddress: AddressDto;
     billingAddress: AddressDto;
     paymentInfo: PaymentInfoDto;
-    createdAt: string;
+    createdAt: string; // Use string for ISO 8601 timestamp
     updatedAt?: string;
 }
 
 export interface OrderItemDto {
-    id: string;
-    orderId: string;
+    id?: string;
+    orderId?: string;
     productId: string;
     productName: string;
     unitPrice: number;
@@ -64,8 +65,9 @@ export interface AddressDto {
 
 export interface PaymentInfoDto {
     transactionId: string;
-    status: string;
-    method: string;
+    // Changed Status and Method to number/int based on previous errors and payload
+    status: number; // Use number to match the integer payload you sent (0 for Pending)
+    method: number; // Use number to match the integer payload you sent (1 for Card)
     paidAt?: string;
 }
 
@@ -104,3 +106,10 @@ export interface AddItemPayload {
     // productName and unitPrice are REMOVED from the payload sent BY the frontend
     // The backend Cart service will fetch these details from the Product service.
 }
+
+// --- REMOVED INTERFACE ---
+// Removed CreateOrderPayloadWrapper as backend OrdersController.Create expects OrderDto directly.
+// export interface CreateOrderPayloadWrapper {
+//     orderDto: OrderDto; // This property holds the actual OrderDto object
+// }
+// --- END REMOVED INTERFACE ---

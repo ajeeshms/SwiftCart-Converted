@@ -26,7 +26,7 @@ public class InvoiceExportService : IInvoiceExportService {
 
 
         using (var workbook = new XLWorkbook()) {
-            var worksheet = workbook.Worksheets.Add($"Invoice #{order.OrderNumber}");
+            var worksheet = workbook.Worksheets.Add($"Invoice");
 
             // --- Invoice Header ---
             int currentRow = 1;

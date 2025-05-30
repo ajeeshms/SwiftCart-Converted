@@ -9,20 +9,14 @@ import { AuthResponseDto, UserDto } from '@/types';
 
 export async function login(credentials: LoginDto): Promise<AuthResponse> {
     // Use service prefix and expect the backend AuthResponseDto structure
-    // Note: The backend UsersController.Login returns { User: UserDto } and sets a cookie for the token.
-    // The frontend expects AuthResponse { token, user } for useAuthStore.setAuth.
-    // Assuming the backend *should* return AuthResponseDto { token, user }, as per the backend DTO definition.
-    // If the backend truly only returns { User: UserDto } and cookie, this mapping will need adjustment.
+    // The backend UsersController.Login is modified to return AuthResponseDto.
     const response = await api.post<AuthResponseDto>(`/userservice/users/login`, credentials);
 
     // Map the backend AuthResponseDto to the frontend AuthResponse type
     // This ensures the structure matches what useAuthStore expects.
-    // If backend only returns { user: UserDto } and sets cookie, this mapping won't work directly.
-    // You'd need to potentially get the token from the cookie after the successful response
-    // or rely solely on the cookie for auth. The current approach assumes the token is in the body.
     const authResponse: AuthResponse = {
         token: response.data.token, // Get token from backend DTO
-        user: { // Map backend UserDto to frontend AuthResponse['user'] structure (subset of UserDto)
+        user: { // Map backend UserDto (nested within AuthResponseDto) to frontend AuthResponse['user'] structure
             id: response.data.user.id,
             email: response.data.user.email,
             firstName: response.data.user.firstName,
@@ -42,6 +36,8 @@ export async function register(data: RegisterDto): Promise<UserDto> {
 
 export async function logout() {
     // Use service prefix
+    // Note: Backend logout typically just clears the cookie server-side.
+    // The frontend authStore logout handles clearing local state.
     const response = await api.post(`/userservice/users/logout`);
     return response.data;
 }

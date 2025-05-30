@@ -6,6 +6,7 @@ import { UserDto, AuthResponseDto } from '@/types'; // Assuming AuthResponseDto 
 
 export const userApi = {
     // Update paths to include the service prefix
+    // The backend Login controller now returns AuthResponseDto directly
     login: (data: any) => api.post<AuthResponseDto>(`/userservice/users/login`, data),
     register: (data: any) => api.post<UserDto>(`/userservice/users/register`, data),
     getProfile: (id: string) => api.get<UserDto>(`/userservice/users/${id}`),
